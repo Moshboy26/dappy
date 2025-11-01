@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dappy Music | Contacts</title>
+        
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+     <link rel="stylesheet" href="style">
+
+     <style>
+        
+     {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+     }
+
+     body {
+      background-color: #000;
+      color: white;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+     }
+
+     .nav-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 15px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+     }
+
+     .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 40px;
+     }
+
+     .nav-links li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2em;
+      transition: color 0.3s ease;
+     }
+
+     .nav-links li a:hover {
+      color: orange;
+     }
+
+     .menu-toggle {
+      display: none;
+      font-size: 1.8em;
+      color: white;
+      position: absolute;
+      right: 25px;
+      cursor: pointer;
+     }
+
+     @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.95);
+        position: absolute;
+        top: 70px; 
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+     }
+
+
+      .Contact-header {
+        border-color: #000;
+        text-align: center;
+        padding: 120px 0 60px;
+      }
+
+      .Contact-header h1 {
+        font-size: 3rem;
+        color: #f57c00;
+      }
+
+      .Contact-header p {
+        font-size: 2em;
+      }
+
+      .contact-carousel {
+        position: relative;
+        max-width: 700px;
+        margin: 50px auto;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 15px;
+        padding: 40px;
+        text-align: center;
+      }
+
+      .carousel-item {
+        display: none;
+      }
+
+      .carousel-item.active {
+        display: block;
+        animation: fadeIn 0.8s ease;
+      }
+
+      .icon {
+        font-size: 3rem;
+        color: #f57c00;
+        margin-bottom: 15px;
+      }
+
+      .carousel-btn {
+        position: absolute;
+        top: 50px;
+        background: none;
+        border: none;
+      }
+
+      .carousel-btn.prev { left: 20px;}
+      .carousel-btn.next { right: 20px;}
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px);}
+        to { opacity: 1; transform: translateY(0);}
+      }
+
+      .contact-section {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding: 50px;
+        background: #1a1a1a;
+        border-top: 2px solid gold;
+      }
+
+      .contact-info, .contact-form {
+        width: 45%;
+        min-width: 300px;
+      }
+
+      .contact-info ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .contact-info li {
+        margin-bottom: 12px;
+        font-size: 1rem;
+      }
+
+      .contact-info i {
+        color: gold;
+        margin-right: 10px;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background: #222;
+        color: white;
+      }
+
+      .contact-form textarea {
+        height: 120px;
+      }
+
+      .contact-form button {
+        background: #f57c00;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .contact-form button:hover {
+        background: gold;
+      }
+
+      
+           .footer {
+            background: linear-gradient(to right, #000000, #1a1a1a);
+            color: #fff;
+            padding: 50px 20px;
+            font-family: 'popins', sans-serif;
+           }
+
+           .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+           }
+
+           .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin: 20px;
+           }
+
+           .footer-section h4,
+           .footer-section h5 {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #f5c542;
+           }
+
+           .footer-section p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #ccc;
+           }
+
+           .footer-section ul {
+            list-style: none;
+            padding: 0;
+           }
+
+           .footer-section ul li {
+            margin-bottom: 8px;
+           }
+
+           .footer-section ul li a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s ease;
+           }
+
+           .footer-section ul li a:hover {
+            color: #f5c542;
+           }
+
+           .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: #aaa;
+           }
+
+           .social-icons a {
+            color: #f5c542;
+            margin-right: 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+           }
+
+           .social-icons a:hover {
+            color: #fff;
+           }
+
+           .contact-slide {
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px;
+            border-radius: 10px;
+           }
+
+           .contact-slide i {
+            color: gold;
+            margin-bottom: 15px;
+           }
+
+           .carousel {
+            width: 80%;
+            margin: 40px auto;
+           }
+
+     </style>
+    </head>
+    <body>
+    <nav class="nav-bar">
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../Index.html">Home</a></li>
+        <li><a href="Services.html">Services</a></li>
+        <li><a href="blogs.html">Blog</a></li>
+        <li><a href="Contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <header class="Contact-header">
+        <h1>    CONTACTS</h1>
+        <p>Our team will get intouch with you as soon as possible</p>
+    </header>
+
+    <div id="contact-carousel" class="carousel-slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="contact-carousel">
+      <div class="carousel-item active">
+        <i class="fa-solid fa-phone icon"></i>
+        <h2>Call us today</h2>
+        <p>+234 803 425 8042</p>
+      </div>
+
+      <div class="carousel-item">
+        <i class="fa-solid fa-envelope icon"></i>
+        <h2>Send an Email</h2>
+        <p>dappymusic05@gmail.com</p>
+      </div>
+
+      <div class="carousel-item">
+        <i class="fa-solid fa-location-dot icon"></i>
+        <h2>Visit our HQ</h2>
+        <p>No 16 Bishop Oderinde Street AIT area Alagbado Lagos</p>
+      </div>
+
+      <button class="carousel-btn prev"></button>
+    </div>
+    </div>
+
+
+    <section class="contact-section">
+        <div class="contact-info">
+            <h3>Get in Touch</h3>
+            <ul>
+                <li><i class="fa-solid fa-phone"></i>08034258042</li>
+                <li><i class="fa-solid fa-envelope"></i>dappymusic05@gmail.com</li>
+                <li><i class="fa-solid fa-location-dot"></i>No 16 Bishop Oderinde Street AIT area Alagbado Lagos</li>
+            </ul>
+        </div>
+
+        <form class="contact-form">
+            <h3>Send us a message</h3>
+            <input type="text" placeholder="Full Name" required>
+            <input type="text" placeholder="Email" required>
+            <textarea placeholder="Your message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+        
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h4>Dappy Music</h4>
+                    <p>
+                         Dappy Records is a Lagos based record label blending Afrobeat, soul, and
+        urban creativity. We nurture talent and share the African sound with the world.
+                    </p>
+            </div>
+
+            <div class="footer-section links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#blog"></a>Blog</li>
+                    <li><a href="#services"></a>Services</li>
+                    <li><a href="#career">Careers</a></li>
+                    <li><a href="#contact">Contacts</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact">
+                <h5>Contact Us</h5>
+                <p>Email: dappymusic05@gmail.com</p>
+                <p>Phone: +234 10000000</p>
+                <P>Lagos, Nigeria</P>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Dappy Records | All Rights Reserved</p>
+            </div>
+
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </footer>
+
+    <script src="../scripts/script.js"></script>
+
+    </body>
+</html>

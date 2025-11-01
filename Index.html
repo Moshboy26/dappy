@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DAPPY MUSIC</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+        <style>
+
+            
+     .nav-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(20, 20, 20, 0.9);
+      padding: 15px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+     }
+
+     .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 40px;
+     }
+
+     .nav-links li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2em;
+      transition: color 0.3s ease;
+     }
+
+     .nav-links li a:hover {
+      color: orange;
+     }
+
+     .menu-toggle {
+      display: none;
+      font-size: 1.8em;
+      color: white;
+      position: absolute;
+      right: 25px;
+      cursor: pointer;
+     }
+
+     @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.95);
+        position: absolute;
+        top: 70px; 
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+     }
+
+            img {
+                width: 100%;
+                height: 80vh;
+                background-image: url(images/logo.dappy.jpg);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                filter: brightness(0.7);
+            }
+            
+            p {
+                font-weight: bolder;
+
+            }
+            h1 {
+                font-size: 3rem;
+                color: white;
+                font-weight: 900;
+                margin-bottom: 15px;
+                letter-spacing: 3px;
+                text-transform: lowercase;
+
+            }
+           .artist-section {
+            text-align: center;
+            background-color: black;
+            padding: 60px;
+           }
+
+           .artist-tittle {
+            font-size: 3rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: white;
+            margin-bottom: 30px;
+            text-align: left;
+           }
+
+           .artist-gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            width: 100%;
+           }
+
+           .artist-card {
+            position: relative;
+            flex: 1;
+            overflow: hidden;
+           }
+
+           .artist-card img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            filter: brightness(0.8);
+            transition: transform 0.3s ease;
+
+           }
+
+           .artist-card:hover img {
+            transform: scale(1.05);
+           }
+
+           .artist-name {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+           }
+
+           .intro-text {
+            text-align: center;
+            margin-top: 40px;
+            padding: 0 20px;
+           }
+
+           .intro-text p {
+            font-family: 'poppins', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: white;
+            line-height: 1.6;
+            max-width: 1620px;
+            background-color: #111;
+           }
+
+           .intro-btn {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 14px 35px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+           }
+
+           .intro-btn:hover {
+            background-color: #f57c00;
+            transform: scale(1.0s);
+           }
+
+           .producer-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 40px;
+            margin: 60px auto;
+            width: 90%;
+            max-width: 1550px;
+           }
+
+           .producer-image {
+            width: 400px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 2);
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+           }
+
+           .producer-image:hover {
+            transform: scale(1.03);
+           }
+
+           .producer-bio {
+            flex: 1;
+           }
+
+           .producer-bio h2 {
+            font-size: 30px;
+            font-weight: 700;
+            color: #fff;
+            font-family: 'popins', sans-serif;
+            margin-bottom: 5px;
+           }
+
+           .producer-bio p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: white;
+            font-weight: 500;
+            font-family: 'open sans', sans-serif;
+            text-align: left;
+            margin-top: 20px;
+           }
+
+           .bio-botton {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-family: 'ponpins', sans-serif;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+           }
+
+           .bio-botton:hover {
+            background-color: #f57c00;
+            transform: translateY(-2px);
+           }
+
+           @media (max-width: 768px) {
+            .producer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .producer-image {
+                width: 90%;
+                max-width: 350px;
+            }
+
+            .producer-bio {
+                margin-top: 20px;
+            }
+
+            .producer-bio p {
+                font-size: 16px;
+            }
+
+            .bio-botton {
+                margin-top: 15px;
+                padding: 10px 20px;
+            }
+           }
+
+           .header-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: brightness(80%);
+            transition: transform 0.5s ease, filter 0.5s ease;
+           }
+
+           .header-image:hover {
+            transform: scale(1.03);
+            filter: brightness(100%);
+           }
+
+           body {
+            background-color: #111;
+           }
+
+           body {
+            margin: 0;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding-top: 80px;
+           }
+
+           .footer {
+            background: linear-gradient(to right, #000000, #1a1a1a);
+            color: #fff;
+            padding: 50px 20px;
+            font-family: 'popins', sans-serif;
+           }
+
+           .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+           }
+
+           .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin: 20px;
+           }
+
+           .footer-section h4,
+           .footer-section h5 {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #f5c542;
+           }
+
+           .footer-section p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #ccc;
+           }
+
+           .footer-section ul {
+            list-style: none;
+            padding: 0;
+           }
+
+           .footer-section ul li {
+            margin-bottom: 8px;
+           }
+
+           .footer-section ul li a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s ease;
+           }
+
+           .footer-section ul li a:hover {
+            color: #f5c542;
+           }
+
+           .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: #aaa;
+           }
+
+           .social-icons a {
+            color: #f5c542;
+            margin-right: 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+           }
+
+           .social-icons a:hover {
+            color: #fff;
+           }
+
+           .art-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0;
+           }
+
+           .art-card {
+            position: relative;
+            width: 50%;
+            max-width: 600px;
+            overflow: hidden;
+           }
+
+           .art-image {
+            width: 100%;
+            height: auto;
+            display: block;
+           }
+
+           .art-name {
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 8px 12px;
+            border-radius: 5px;
+           }
+
+           .art-card:hover {
+            transform: scale(1.05);
+            transition: trasform 0.4s ease;
+           }
+
+           .prd-section {
+            background-color: #000000;
+            color: #fff;
+            padding: 80px 10%;
+           }
+
+           .prd-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+           }
+
+           .prd-text {
+            flex: 1;
+            min-width: 300px;
+           }
+
+           .prd-text h6 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            font-weight: bold;
+           }
+
+           .prd-text p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+           }
+
+        .prd-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: right;
+        }
+
+        .prd-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+            transition: transform 0.4s ease;
+        }
+
+        .art-image img:hover {
+            transform: scale(1.03);
+        }
+
+        @media (max-width: 900px) {
+            .prd-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .prd-image {
+                text-align: center;
+            }
+        }
+
+        .video-header {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        </style>
+        <link rel="stylesheet" href="style">
+    </head>
+    <body>
+    <nav class="nav-bar">
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="Index.html">Home</a></li>
+        <li><a href="pages/Services.html">Services</a></li>
+        <li><a href="pages/blogs.html">Blog</a></li>
+        <li><a href="pages/Contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+
+        <header class="video-header">
+            <video autoplay muted loop playsinline class="background-video">
+                <source src="videos/DappyAllStar.mp4" type="video/mp4">
+            </video>
+        </header>
+
+        <section class="intro-text">
+            <p>
+                 Dappy Music was founded on 19 February 2024 by Adedapo Olaposi Adeyera. The company draws on Lagos “vibrant energy and boundless creativity” focusing on Afrobeat, a West African genre defined as a fusion of Nigerian (Yoruba) highlife and folk with funk, jazz and soul, This urban, high-octane style is at the core of Dappy Music sound and identity. One of the label’s key projects is Dappy All Stars, a collaboration featuring its roster artists. In October 2025, Dappy Music released an EP titled Damuvid 25 (feat. Mr syl, Atàndá & Isaac Meek) by Dappy All Stars.. 
+            </p>
+            <a href="https://lynkify.in/album/damuvid-25/LQKBvzcv" class="intro-btn">Explore Discography</a>
+        </section>
+
+        <section class="artist-section">
+        <h1 class="artist-tittle"> Artists </h1>
+        <div class="artist-gallery">
+            <div class="artist-card">
+                <img src="images/atanda.dappy.jpg">
+                <div class="artist-name">Atanda</div>
+            </div>
+
+            <div class="artist-card">
+                <img src="images/TJpraise.dappy.jpg">
+                <div class="artist-name">TJ Praise</div>
+            </div>
+
+            <div class="artist-card">
+                <img src="images/Mrsyl.dappy.jpg">
+                <div class="artist-name">Mr Syl</div>
+            </div>
+        </div>
+        </section>
+
+        <section class="art-section">
+            <div class="art-card">
+                <img src="images/meek.jpg">
+                <div class="art-name">Isaac Meek</div>
+            </div>
+
+            <div class="art-card">
+                <img src="images/fola praise.jpg">
+                <div class="art-name">Fola Praise</div>
+            </div>
+        </section>
+
+        <section class="producer-container">
+            <img src="images/dir.jpg" class="producer-image">
+            <div class="producer-bio">
+                <h2>Meet the Director</h2>
+                <p>
+                    Adedapo Olaposi Adeyera is an Entrepreneurial Visionary Uplifting Nigerian Talent
+Roots and Education: Born in Ile-Ife, Osun State, Adedapo Adeyera’s early life was steeped in the rich Yoruba cultural heritage. The Yoruba people have “historically been at the forefront of trade and commerce in West Africa,” a legacy that Adeyera carries with He channeled this cultural pride into academic excellence, earning a degree in Management and Accounting at Obafemi Awolowo University (OAU) in Ile-Ife.This environment – urging a shift “from job seekers to entrepreneurs” – planted the seeds for Adeyera’s own business ambitions
+ 
+After graduating, Adedapo launched his career in Lagos as an auditor at a major accounting firm. In the fast-paced corporate setting he honed attention to detail and discipline, but he soon felt the pull of innovation and purpose. Watching Nigeria’s youth struggle with unemployment inspired him to act. As one commentator notes, many young Nigerians “are tired of waiting. They’re building solutions… leveraging community, courage, and raw creativity” Adeyera exemplified this spirit. Rather than wait for opportunity, he created it: applying his financial skills to launch his company, Dappy Foods, to serve local markets with quality products. Not long after, he founded Dappy Energy, venturing into Nigeria’s power sector. In doing so he put Tony Elumelu’s words into practice – that entrepreneurship enables Africans to “create their own jobs, become employers, and take charge of their futures” By transforming challenges in food and energy into new businesses, he joined the ranks of Nigeria’s young change-makers who are the “lifeblood of Africa’s rise”       
+              </p>
+            </div>
+        </section>
+
+        <section class="prd-section">
+            <div class="prd-content">
+                <div class="prd-text">
+                    <h6>Meet the Producer</h6>
+                    <p>
+                        Samuel Ayo is a talented music producer from Nigeria, recognized for his distinctive sound and creative versatility. With a passion for crafting rich, immersive beats, Samuel blends elements of Afrobeat, R&B, hip-hop, and alternative sounds to produce music that resonates deeply with listeners. Over the years, he has collaborated with a range of emerging artists, helping them shape their sound and bring their musical visions to life.
+
+Driven by a desire to innovate and inspire, Samuel continues to push boundaries in music production experimenting with new rhythms, melodies, and sonic textures. His work reflects not just technical skill but also a deep understanding of storytelling through sound, making him one of the rising forces shaping the next wave of Nigerian and African music.
+                    </p>
+                </div>
+                <div class="prd-image">
+                    <img src="images/prd.jpg">
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h4>Dappy Music</h4>
+                    <p>
+                         Dappy Records is a Lagos based record label blending Afrobeat, soul, and
+        urban creativity. We nurture talent and share the African sound with the world.
+                    </p>
+            </div>
+
+            <div class="footer-section links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#blog"></a>Blog</li>
+                    <li><a href="#services"></a>Services</li>
+                    <li><a href="#career">Careers</a></li>
+                    <li><a href="#contact">Contacts</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact">
+                <h5>Contact Us</h5>
+                <p>Email: dappymusic05@gmail.com</p>
+                <p>Phone: +234 10000000</p>
+                <P>Lagos, Nigeria</P>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Dappy Records | All Rights Reserved</p>
+            </div>
+
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </footer>
+        <script src="loadLayout.js"></script>
+    </body>
+</html>
